@@ -1,0 +1,52 @@
+.imageselector {
+    position:absolute;
+    width:100px;
+    height:100px;
+    z-index:5;
+}
+
+.imageselector:hover{
+    background-color: rgba(161, 24, 24, 0.61) !important;
+
+}
+
+.imagechoice{
+    float:left;
+    width:100px;
+    height:130px;
+    margin-right:20px;
+}
+
+#newImageContainer {
+     padding: 10px;
+    border: solid 1px lightgrey;
+    margin-top:10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width:100%
+
+}
+
+#currentImage {
+     max-height: 300px;
+     max-width: 500px;
+ }
+
+#imageContainer {
+    text-align: center;
+    background-color: #dfdfdf;
+    padding: 15px;
+
+}
+
+#imageUrlChooseeContainer {
+    padding: 10px;
+    border: solid 1px lightgrey;
+    margin-top:10px;
+    margin-bottom:10px
+}
+
+.jcrop-centered
+{
+    display: inline-block;
+}
