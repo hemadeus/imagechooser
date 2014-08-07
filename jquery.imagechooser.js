@@ -27,7 +27,7 @@ var imageChooserCoordonate = {
 function imageChooserInit(mainControl, config) {
     $.ajax({
         //TODO: FIND A WAY TO GENERATE IT WITH THE FILE OF THE CURRENT JS
-        url: "/Content/ImageChooser/ImageChooserTemplate.html",
+        url: "imagechoosertemplate.html",
         success: function(data) {
             $(mainControl).append(data);
             $(mainControl).append($('#imageChooseTemplate').html().format(config.mainImageUrl,config.mainImageId));
