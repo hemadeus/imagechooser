@@ -1,0 +1,63 @@
+    <div class="event-image">  
+      <div style="position: relative; width: 0; height: 0">
+        <div style="position: absolute; left: 5px; top: 5px; height: 180px; width: 180px; background-color: rgba(75, 18, 18, 0.44);">
+          <div style="text-align: center; line-height: 180px;">
+            <a style="color: white;" href="" id="imageChangeLink">
+              <i class="fa fa-camera"></i>
+                 Click to Change
+            </a>
+          </div>
+        </div>
+      </div>    
+      <img src="/image/MainImage.jpg" alt="Test 3" id="mainImage" style="box-shadow: 1px 4px 25px #979191;" />
+    </div>
+    
+    <script>
+    var suggestionList = [
+        {
+            url: "/image/test.jpg",
+            title: "test 1",
+            id: 1,
+        },
+        {
+            url: "/image/test2.jpg",
+            title: "test 2",
+            id: 2,
+        }
+    ];
+        $('#ImageModalContainer').createImageChooser({
+            mainImageUrl: "/image/MainImage.jpg",
+            mainImageId:3,
+            openButtonSelector: "#imageChangeLink",
+            suggestionList: suggestionList,
+            saveCallback: function (img) {
+                $('#EventImageCoordonate_X').val(img.coordonate.x);
+                $('#EventImageCoordonate_Y').val(img.coordonate.y);
+                $('#EventImageCoordonate_Width').val(img.coordonate.x2);
+                $('#EventImageCoordonate_Height').val(img.coordonate.y2);
+                $('#EventImageUrl').val(img.imageUrl);
+                $('#EventImageId').val(img.id);
+                showPreview(img.coordonate, 200, 200,img.imageUrl);
+            }
+        });
+
+
+        function showPreview(coords, maxX, maxY, url) {
+            var rx = maxX / coords.w;
+            var ry = maxY / coords.h;
+
+            rx = (rx == 0) ? 1 : rx;
+            ry = (ry == 0) ? 1 : ry;
+
+            photoX = maxX;
+            photoY = maxY;
+            $("#mainImage").attr('src', url);
+            $("#mainImage").css({
+                width: Math.round(rx * photoX) + 'px',
+                height: Math.round(ry * photoY) + 'px',
+                marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                marginTop: '-' + Math.round(ry * coords.y) + 'px'
+            });
+        }
+
+        </script>
