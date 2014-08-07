@@ -1,0 +1,48 @@
+<script type="text/html" id="imageChooseTemplate">
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="Image chooser" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Image chooser</h4>
+                </div>
+                <div class="modal-body" >
+                    <div >
+                        <div id="imageContainer">
+                            <img id="currentImage" src="{0}" data-id="{1}" />
+                        </div>
+                    </div>
+                    <div id="imageUrlChooseeContainer">
+                        <span>Enter a full image url to upload a custom image.</span><br />
+                        <span class="subtitle" style="line-height:30px;">Url:</span>
+                        <input type="text" id="urlChooser" style="width: 450px" placeholder="Add image url (link) to choose a new image." />
+                    </div>
+                    <div id="newImageContainer">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary imageChooserSave">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="imageContainerTemplate" type="text/html">
+    <div class="imagechoice">
+        <div style="position:relative">
+            <a class="imageselector" href="">
+            </a>
+        </div>
+        <img src="{0}" style="width:100px;height:100px" data-id="{2}" />
+        <span>{1}</span>
+    </div>
+</script>
+
+
+
+<script id="mainImageTemplate" type="text/html">
+    <img id="currentImage" src="{0}" data-id="{1}" />
+</script>
